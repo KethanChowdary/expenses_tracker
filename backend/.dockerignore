@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+expense_tracker.db
+.pytest_cache/
+alembic/versions/__pycache__/
