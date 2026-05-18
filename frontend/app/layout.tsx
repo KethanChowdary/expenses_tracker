@@ -4,8 +4,17 @@ import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Expense Tracker",
+  description: "Track your expenses",
   manifest: "/manifest.json",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Expenses" },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon-180.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Expenses",
+  },
 };
 
 export const viewport: Viewport = {
