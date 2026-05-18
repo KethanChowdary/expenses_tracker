@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 
 import { useQueryClient } from "@tanstack/react-query";
 import { getApiBaseUrl } from "../../custom_library/getApiBaseUrl";
+import { getAuthToken } from "../../custom_library/api";
 
 type Step = "upload" | "password" | "map" | "review" | "done";
 type Mode = "single" | "split"; // single amount col vs separate debit/credit cols
@@ -214,9 +215,11 @@ export default function CsvImportPage() {
 
 
     try {
+      const token = getAuthToken();
       const res = await fetch(`${getApiBaseUrl()}/imports/preview`, {
         method: "POST",
         body: fd,
+        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
       });
 
       if (res.status === 423) { setStep("password"); return; }
@@ -310,9 +313,11 @@ export default function CsvImportPage() {
     try {
       setLoading(true);
       setError("");
+      const token = getAuthToken();
       const res = await fetch(`${getApiBaseUrl()}/imports/review`, {
         method: "POST",
         body: fd,
+        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
       });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
@@ -336,9 +341,13 @@ export default function CsvImportPage() {
     try {
       setLoading(true);
       setError("");
+      const token = getAuthToken();
       const res = await fetch(`${getApiBaseUrl()}/imports/commit`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
         body: JSON.stringify({ transactions }),
       });
       if (!res.ok) {
