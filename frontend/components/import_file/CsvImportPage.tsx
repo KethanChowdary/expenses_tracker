@@ -1,6 +1,8 @@
 "use client";
 import { useState, useRef } from "react";
+
 import { useQueryClient } from "@tanstack/react-query";
+import { getApiBaseUrl } from "../../custom_library/getApiBaseUrl";
 
 type Step = "upload" | "password" | "map" | "review" | "done";
 type Mode = "single" | "split"; // single amount col vs separate debit/credit cols
@@ -210,8 +212,9 @@ export default function CsvImportPage() {
     fd.append("file", f);
     fd.append("password", pw);
 
+
     try {
-      const res = await fetch("http://localhost:8000/api/imports/preview", {
+      const res = await fetch(`${getApiBaseUrl()}/imports/preview`, {
         method: "POST",
         body: fd,
       });
@@ -307,7 +310,7 @@ export default function CsvImportPage() {
     try {
       setLoading(true);
       setError("");
-      const res = await fetch("http://localhost:8000/api/imports/review", {
+      const res = await fetch(`${getApiBaseUrl()}/imports/review`, {
         method: "POST",
         body: fd,
       });
@@ -333,7 +336,7 @@ export default function CsvImportPage() {
     try {
       setLoading(true);
       setError("");
-      const res = await fetch("http://localhost:8000/api/imports/commit", {
+      const res = await fetch(`${getApiBaseUrl()}/imports/commit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ transactions }),
