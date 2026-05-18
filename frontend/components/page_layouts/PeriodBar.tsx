@@ -107,7 +107,7 @@ export default function PeriodBar({
               color: "#f1f5f9", fontSize: 13, fontFamily: "inherit", outline: "none",
             }}
           >
-            {Array.from({ length: 28 }, (_, i) => i + 1).map(d => (
+            {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
               <option key={d} value={d}>{d}</option>
             ))}
           </select>
