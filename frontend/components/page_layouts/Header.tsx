@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../../lib/authContext";
+import { useAuth } from "../../custom_library/authContext";
 
 export default function Header({ title }: { title: string }) {
   const month = new Date().toLocaleString("en-IN", { month: "long", year: "numeric" });

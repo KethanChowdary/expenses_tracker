@@ -3,7 +3,7 @@
  * PeriodBar — period-mode tabs + navigator + custom inputs
  * Drop this above any page that uses usePeriod().
  */
-import { PeriodMode } from "../../lib/usePeriod";
+import { PeriodMode } from "../../custom_library/usePeriod";
 
 const S = {
   pill: (active: boolean) => ({

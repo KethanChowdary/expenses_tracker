@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { Transaction } from "../../lib/api";
+import { Transaction } from "../../custom_library/api";
 
 const ACCOUNT_KEY = "expense_tracker_account_balance_baseline";
 const CASH_KEY = "expense_tracker_cash_balance_baseline";

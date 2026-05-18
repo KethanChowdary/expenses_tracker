@@ -1,9 +1,9 @@
 "use client";
 import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { txApi } from "../../lib/api";
-import { useCategories } from "../../lib/customCategories";
-import { useCategoryBudgets } from "../../lib/budgets";
+import { txApi } from "../../custom_library/api";
+import { useCategories } from "../../custom_library/customCategories";
+import { useCategoryBudgets } from "../../custom_library/budgets";
 
 function fmt(n: number) {
   return "₹" + Math.round(Math.abs(n)).toLocaleString("en-IN");

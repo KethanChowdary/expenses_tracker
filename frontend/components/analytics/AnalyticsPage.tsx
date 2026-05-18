@@ -4,10 +4,10 @@ import {
   XAxis, YAxis, Tooltip, ResponsiveContainer,
   LineChart, Line, CartesianGrid,
 } from "recharts";
-import { txApi, Transaction } from "../../lib/api";
-import { useCategories } from "../../lib/customCategories";
+import { txApi, Transaction } from "../../custom_library/api";
+import { useCategories } from "../../custom_library/customCategories";
 import PeriodBar from "../page_layouts/PeriodBar";
-import { usePeriod } from "../../lib/usePeriod";
+import { usePeriod } from "../../custom_library/usePeriod";
 import { useState } from "react";
 
 // ── palette ──────────────────────────────────────────────────────

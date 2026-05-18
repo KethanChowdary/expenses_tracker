@@ -1,6 +1,6 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { txApi } from "../../lib/api";
+import { txApi } from "../../custom_library/api";
 import QuickAdd from "../transactions/QuickAdd";
 import SummaryCards from "./SummaryCards";
 import TxItem from "../transactions/TxItem";

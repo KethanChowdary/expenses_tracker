@@ -1,4 +1,4 @@
-import { Transaction } from "../../lib/api";
+import { Transaction } from "../../custom_library/api";
 
 export default function SummaryCards({ txs }: { txs: Transaction[] }) {
   const now = new Date();

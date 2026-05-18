@@ -6,7 +6,7 @@ import CsvImportPage    from "../components/import_file/CsvImportPage";
 import AnalyticsPage    from "../components/analytics/AnalyticsPage";
 import InsightsPage     from "../components/insights/InsightsPage";
 import AuthPage         from "../components/auth/AuthPage";
-import { useAuth } from "../lib/authContext";
+import { useAuth } from "../custom_library/authContext";
 
 export default function Home() {
   const { user, loading } = useAuth();

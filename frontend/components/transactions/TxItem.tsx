@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Transaction, txApi } from "../../lib/api";
-import { useCategories, CATEGORY_ICON_OPTIONS } from "../../lib/customCategories";
+import { Transaction, txApi } from "../../custom_library/api";
+import { useCategories, CATEGORY_ICON_OPTIONS } from "../../custom_library/customCategories";
 
 type FormState = {
   category: string;

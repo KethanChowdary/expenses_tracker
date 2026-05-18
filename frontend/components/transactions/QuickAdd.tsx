@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { txApi } from "../../lib/api";
-import { guessCategory, parseQuickAdd, CATEGORY_EMOJI, isIncomeCategory, looksLikeIncome } from "../../lib/categories";
+import { txApi } from "../../custom_library/api";
+import { guessCategory, parseQuickAdd, CATEGORY_EMOJI, isIncomeCategory, looksLikeIncome } from "../../custom_library/categories";
 
 type EntryKind = "spend" | "income" | "lent" | "investment";
 

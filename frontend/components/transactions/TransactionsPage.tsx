@@ -1,10 +1,10 @@
 "use client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { txApi } from "../../lib/api";
+import { txApi } from "../../custom_library/api";
 import TxItem from "./TxItem";
 import PeriodBar from "../page_layouts/PeriodBar";
-import { usePeriod } from "../../lib/usePeriod";
-import { CATEGORY_ICON_OPTIONS, useCategories } from "../../lib/customCategories";
+import { usePeriod } from "../../custom_library/usePeriod";
+import { CATEGORY_ICON_OPTIONS, useCategories } from "../../custom_library/customCategories";
 
 const FILTERS = ["All", "Expenses", "Income"] as const;
 type Filter = typeof FILTERS[number];

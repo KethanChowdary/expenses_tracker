@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useAuth } from "../../lib/authContext";
+import { useAuth } from "../../custom_library/authContext";
 
 export default function AuthPage() {
   const [mode, setMode] = useState<"login" | "register">("login");
