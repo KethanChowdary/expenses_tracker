@@ -34,3 +34,4 @@ uvloop==0.22.1
 watchfiles==1.1.1
 websockets==16.0
 xlrd==1.2.0
+psycopg[binary]==3.1.18
